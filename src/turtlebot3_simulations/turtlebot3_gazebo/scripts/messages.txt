@@ -1,0 +1,46 @@
+{
+  "message_type": "NAVIGATION_REQUEST",
+  "sender": "CI_AGENT_ID",
+  "receiver": "BI_AGENT_ID",
+  "start_position": [x1, y1], 
+  "goal_position": [x2, y2],
+  "visitor_id": "VISITOR_ID",
+  "constraints": {
+    "max_duration": "TIME_LIMIT",
+    "preferred_path": "SHORTEST/SAFEST",
+  },
+  "timestamp": "REQUEST_TIMESTAMP"
+}
+
+{
+  "message_type": "NAVIGATION_RESPONSE",
+  "sender": "BI_AGENT_ID",
+  "receiver": "CI_AGENT_ID",
+  "visitor_id": "VISITOR_ID",
+  "path": [[x1, y1], [x2, y2], ..., [xn, yn]],
+  "estimated_time": "TIME_ESTIMATE",
+  "status": "APPROVED",
+  "timestamp": "RESPONSE_TIMESTAMP"
+}
+
+{
+  "message_type": "NAVIGATION_RESPONSE",
+  "sender": "BI_AGENT_ID",
+  "receiver": "CI_AGENT_ID",
+  "visitor_id": "VISITOR_ID",
+  "status": "DENIED",
+  "reason": "REASON_FOR_DENIAL",
+  "timestamp": "RESPONSE_TIMESTAMP"
+}
+
+{
+  "message_type": "OOS_NOTIFICATION",
+  "sender": "BI_AGENT_ID",
+  "receiver": "CI_AGENT_ID",
+  "status": "OUT_OF_SERVICE",
+  "out_of_service_duration": "TIME_DURATION",
+  "estimated_recovery_time": "RECOVERY_TIMESTAMP",
+  "reason": "REASON_FOR_OOS",
+  "timestamp": "NOTIFICATION_TIMESTAMP"
+}
+
